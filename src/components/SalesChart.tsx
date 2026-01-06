@@ -1,25 +1,65 @@
 "use client";
+
 import {
-  LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer
+  BarChart,
+  Bar,
+  LineChart,
+  Line,
+  PieChart,
+  Pie,
+  Tooltip,
+  XAxis,
+  YAxis,
+  ResponsiveContainer,
 } from "recharts";
 
-const data = [
-  { year: "2022", sales: 5000 },
-  { year: "2023", sales: 7000 },
-  { year: "2024", sales: 9000 },
-];
+type SalesData = {
+  month: string;
+  amount: number;
+};
 
-export default function SalesChart() {
+type Props = {
+  data: SalesData[];
+  chartType: "bar" | "line" | "pie";
+};
+
+export default function SalesChart({ data, chartType }: Props) {
+  if (!data.length) {
+    return (
+      <div className="h-80 flex items-center justify-center text-gray-500">
+        No data matches the selected threshold
+      </div>
+    );
+  }
+
   return (
-    <ResponsiveContainer width="100%" height={300}>
-      <LineChart data={data} margin={{ top: 20, right: 30, left: 0, bottom: 0 }}>
-        <CartesianGrid strokeDasharray="3 3" />
-        <XAxis dataKey="year" />
-        <YAxis />
-        <Tooltip />
-        <Legend />
-        <Line type="monotone" dataKey="sales" stroke="#8884d8" />
-      </LineChart>
-    </ResponsiveContainer>
+    <div className="h-80 bg-white rounded-lg p-4 shadow">
+      <ResponsiveContainer width="100%" height="100%">
+        {chartType === "bar" && (
+          <BarChart data={data}>
+            <XAxis dataKey="month" />
+            <YAxis />
+            <Tooltip />
+            <Bar dataKey="amount" />
+          </BarChart>
+        )}
+
+        {chartType === "line" && (
+          <LineChart data={data}>
+            <XAxis dataKey="month" />
+            <YAxis />
+            <Tooltip />
+            <Line dataKey="amount" />
+          </LineChart>
+        )}
+
+        {chartType === "pie" && (
+          <PieChart>
+            <Tooltip />
+            <Pie data={data} dataKey="amount" nameKey="month" />
+          </PieChart>
+        )}
+      </ResponsiveContainer>
+    </div>
   );
 }
