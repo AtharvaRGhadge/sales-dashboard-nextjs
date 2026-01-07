@@ -32,9 +32,10 @@ export default function DashboardPage() {
     (item) => item.amount > threshold
   );
 
-  return (
-    <div className="p-6 max-w-5xl mx-auto">
-      <h1 className="text-3xl font-bold mb-6">
+ return (
+  <div className="min-h-screen bg-slate-100 p-6">
+    <div className="max-w-5xl mx-auto bg-white rounded-xl shadow-md p-6">
+      <h1 className="text-3xl font-bold mb-6 text-indigo-600">
         Sales Dashboard
       </h1>
 
@@ -53,5 +54,7 @@ export default function DashboardPage() {
         chartType={chartType}
       />
     </div>
-  );
+  </div>
+ );
+
 }
