@@ -40,7 +40,8 @@ The dashboard visualizes monthly sales data with Bar, Line, and Pie charts, alon
     month: string;
     amount: number;
   }
--------------------------------------------------------------------------------------------------------------------------
+
+
 ** Sales Threshold Filter-
 
   The input value is stored in a local state inside the FilterInput component
@@ -53,12 +54,12 @@ The dashboard visualizes monthly sales data with Bar, Line, and Pie charts, alon
   const filteredSales = sales.filter(
     (item) => item.amount > threshold
   );
---------------------------------------------------------------------------------------------------------------------------
+
 
 ** Chart Switcher-
   Allows switching between Bar, Line, and Pie charts
   The active chart type is visually highlighted
--------------------------------------------------------------------------------------------------------------------------
+
 
 ** Chart Behavior-
 
@@ -74,7 +75,7 @@ The dashboard visualizes monthly sales data with Bar, Line, and Pie charts, alon
   Pie Chart:
   Each slice uses a distinct color
   Tooltip displays sales details
---------------------------------------------------------------------------------------------------------------------------
+
 
 ** Running the Project Locally-
 
@@ -93,9 +94,10 @@ The dashboard visualizes monthly sales data with Bar, Line, and Pie charts, alon
   5)Navigate to:
   /dashboard
 
-** Deployment
 
-The project can be deployed on Vercel
-Push the code to GitHub
-Import the repository into Vercel
-Deployment happens automatically on each push
+** Deployment-
+
+ The project can be deployed on Vercel
+ Push the code to GitHub
+ Import the repository into Vercel
+ Deployment happens automatically on each push
