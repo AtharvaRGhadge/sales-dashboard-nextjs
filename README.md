@@ -1,36 +1,97 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+Sales Dashboard
+A responsive Sales Dashboard built using Next.js (App Router), React, TypeScript, Tailwind CSS, and Recharts.
+The dashboard visualizes monthly sales data with Bar, Line, and Pie charts, along with a Sales Threshold filter that works using Apply and Reset buttons.
 
-## Getting Started
+** Features
 
-First, run the development server:
+  * Interactive Bar, Line, and Pie charts
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+  * Consistent color palette across all charts
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+  * Chart type switcher (Bar / Line / Pie)
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+  * Sales Threshold filter
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+      Filter applies only after clicking “Apply Filter”
 
-## Learn More
+      Reset button clears filter and restores original data
 
-To learn more about Next.js, take a look at the following resources:
+  * Fully responsive layout
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+** Tech Stack
 
-## Deploy on Vercel
+  Next.js 13+ (App Router)
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+  React
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+  TypeScript
+
+  Tailwind CSS
+
+  Recharts
+
+** Application Logic
+  Sales Data
+  Sales data is mocked using useEffect in dashboard/page.tsx
+  Each record follows the structure:
+  {
+    month: string;
+    amount: number;
+  }
+
+** Sales Threshold Filter
+
+  The input value is stored in a local state inside the FilterInput component
+  The applied threshold is updated only when the Apply Filter button is clicked
+  Charts update only after applying the filter
+  The Reset button clears the input and restores the original dataset
+  
+  Filtering logic:
+  
+  const filteredSales = sales.filter(
+    (item) => item.amount > threshold
+  );
+
+** Chart Switcher
+  Allows switching between Bar, Line, and Pie charts
+  The active chart type is visually highlighted
+
+** Chart Behavior
+
+  Bar Chart:
+  Each bar represents a month with a unique color
+  Axis labels remain visible on hover
+  
+  Line Chart:
+  Uses a straight line
+  Each data point is represented with a different colored dot
+  Active dots increase in size on hover
+  
+  Pie Chart:
+  Each slice uses a distinct color
+  Tooltip displays sales details
+
+** Running the Project Locally
+
+  1) Clone the repository:
+  git clone <repository-url>
+  
+  2)Install dependencies:
+  npm install
+  
+  3)Start the development server:
+  npm run dev
+  
+  4)Open the application in the browser:
+  http://localhost:3000
+  
+  5)Navigate to:
+  /dashboard
+
+** Deployment
+
+The project can be deployed on Vercel
+Push the code to GitHub
+Import the repository into Vercel
+Deployment happens automatically on each push
