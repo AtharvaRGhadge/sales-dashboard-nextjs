@@ -1,8 +1,8 @@
-Sales Dashboard
+Sales Dashboard-
 A responsive Sales Dashboard built using Next.js (App Router), React, TypeScript, Tailwind CSS, and Recharts.
 The dashboard visualizes monthly sales data with Bar, Line, and Pie charts, along with a Sales Threshold filter that works using Apply and Reset buttons.
-
-** Features
+--------------------------------------------------------------------------------------------------------------------------
+** Features-
 
   * Interactive Bar, Line, and Pie charts
 
@@ -17,9 +17,9 @@ The dashboard visualizes monthly sales data with Bar, Line, and Pie charts, alon
       Reset button clears filter and restores original data
 
   * Fully responsive layout
+---------------------------------------------------------------------------------------------------------------------------
 
-
-** Tech Stack
+** Tech Stack-
 
   Next.js 13+ (App Router)
 
@@ -30,8 +30,9 @@ The dashboard visualizes monthly sales data with Bar, Line, and Pie charts, alon
   Tailwind CSS
 
   Recharts
+-------------------------------------------------------------------------------------------------------------------------
 
-** Application Logic
+** Application Logic-
   Sales Data
   Sales data is mocked using useEffect in dashboard/page.tsx
   Each record follows the structure:
@@ -39,8 +40,8 @@ The dashboard visualizes monthly sales data with Bar, Line, and Pie charts, alon
     month: string;
     amount: number;
   }
-
-** Sales Threshold Filter
+-------------------------------------------------------------------------------------------------------------------------
+** Sales Threshold Filter-
 
   The input value is stored in a local state inside the FilterInput component
   The applied threshold is updated only when the Apply Filter button is clicked
@@ -52,12 +53,14 @@ The dashboard visualizes monthly sales data with Bar, Line, and Pie charts, alon
   const filteredSales = sales.filter(
     (item) => item.amount > threshold
   );
+--------------------------------------------------------------------------------------------------------------------------
 
-** Chart Switcher
+** Chart Switcher-
   Allows switching between Bar, Line, and Pie charts
   The active chart type is visually highlighted
+-------------------------------------------------------------------------------------------------------------------------
 
-** Chart Behavior
+** Chart Behavior-
 
   Bar Chart:
   Each bar represents a month with a unique color
@@ -71,8 +74,9 @@ The dashboard visualizes monthly sales data with Bar, Line, and Pie charts, alon
   Pie Chart:
   Each slice uses a distinct color
   Tooltip displays sales details
+--------------------------------------------------------------------------------------------------------------------------
 
-** Running the Project Locally
+** Running the Project Locally-
 
   1)Clone the repository:
   git clone <repository-url>
