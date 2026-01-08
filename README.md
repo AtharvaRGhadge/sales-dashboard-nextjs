@@ -74,7 +74,7 @@ The dashboard visualizes monthly sales data with Bar, Line, and Pie charts, alon
 
 ** Running the Project Locally
 
-  1) Clone the repository:
+  1)Clone the repository:
   git clone <repository-url>
   
   2)Install dependencies:
